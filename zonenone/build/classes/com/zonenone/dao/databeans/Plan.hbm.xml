@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zonenone.dao.databeans.Plan" table="plan">
+        <id name="planId" type="integer">
+            <column name="PLAN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="planNme" type="string">
+            <column name="plan_name" not-null="true" />
+        </property>
+        <property name="voice" type="integer">
+            <column name="voice" />
+        </property>
+        <property name="text" type="integer">
+            <column name="text" />
+        </property>
+        <property name="data" type="string">
+            <column name="data" />
+        </property>
+        <property name="amount" type="integer">
+            <column name="amount" />
+        </property>
+    </class>
+</hibernate-mapping>

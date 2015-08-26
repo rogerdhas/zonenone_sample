@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zonenone.dao.databeans.PredictedPlan" table="PREDICATED_PLAN">
+        <id name="id" type="integer">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="count" type="int">
+            <column name="count" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" />
+        </property>
+        <many-to-one name="user" class="com.zonenone.dao.databeans.User" fetch="select">
+            <column name="USER_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="plan" class="com.zonenone.dao.databeans.Plan" fetch="select">
+            <column name="PLAN_ID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
